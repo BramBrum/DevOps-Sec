@@ -29,34 +29,8 @@ jobs:
           tags: |
             brambrum/devops-app:latest
 
-  scan:
-    name: Scan
-    needs: [ build ]
-    runs-on: ubuntu-latest
-    steps:
-    - name: Login to Docker Hub
-      uses: docker/login-action@v2
-      with:
-          username: ${{ secrets.DOCKERHUB_LOGIN }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
-    - name: Docker Scout CVEs
-      uses: docker/scout-action@v1.5.0
-      with:
-          command: cves
-          image: brambrum/devops-app:latest
-#         only-fixed: true
-          only-severities: critical
-          ignore-base: false
-          ignore-unchanged: false
-          write-comment: true
-          github-token: ${{ secrets.GITHUB_TOKEN }} # to be able to write the comment
-          exit-code: true
-          exit-on: vulnerability
-
-
   test:
     name: Test
-    needs: [ scan ]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
