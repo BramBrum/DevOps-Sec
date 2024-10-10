@@ -49,7 +49,7 @@ jobs:
           ignore-base: false
           ignore-unchanged: false
           write-comment: true
-          github-token: ${{ secrets.BRAMGITHUB_TOKEN }} # to be able to write the comment
+          github-token: ${{ secrets.BRAMGITHUB_TOKEN }} 
           exit-code: true
           exit-on: vulnerability
 
@@ -84,3 +84,5 @@ jobs:
               sudo kubectl delete deployment --all              
               sudo kubectl apply -f ${{ github.workspace }}/kubernetes/deployment.yaml --force
               sudo kubectl apply -f ${{ github.workspace }}/kubernetes/nginx-service.yaml --force        
+
+   
