@@ -97,9 +97,4 @@ jobs:
         run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
       - name: Run API tests
         run: |
-          postman collection run "38897524-1ce1279d-1b14-4b84-b9f6-bfb49c7e4c3b" --reporters cli,json-summary --reporter-json-summary-export postman-summary.json
-      - name: Upload Postman test results
-        uses: actions/upload-artifact@v3
-        with:
-          name: postman-test-results
-          path: postman-summary.json
+          postman collection run "38897524-1ce1279d-1b14-4b84-b9f6-bfb49c7e4c3b"
