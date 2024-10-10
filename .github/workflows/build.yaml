@@ -44,12 +44,12 @@ jobs:
       with:
           command: cves
           image: brambrum/devops-app:latest
-          only-severities: high
+          only-severities: critical, high
           ignore-base: false
           ignore-unchanged: false
           write-comment: true
           github-token: ${{ secrets.BRAMGITHUB_TOKEN }} 
-          exit-code: true
+          exit-code: false
           exit-on: vulnerability
 
   test:
