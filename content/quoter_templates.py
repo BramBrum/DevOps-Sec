@@ -83,7 +83,7 @@ def page(content,user_id,title,error=None):
 
 <div class="modal">
   <form action="/quotes" method="post">
-    <h3>Quote</h3>
+    <h3>Quote Bram</h3>
     <textarea name="text"></textarea>
     <h3>Attribution</h3>
     <input type="text" name="attribution">
