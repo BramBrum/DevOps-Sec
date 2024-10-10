@@ -16,7 +16,17 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"  pm.response.to.have.status(200);\r",
-							"});"
+							"});\r",
+							"pm.test(\"Response time is less than 500ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+							"});\r",
+							"pm.test(\"Bram present\",() => {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Bram\");\r",
+							"})\r",
+							"pm.test(\"Response size is greater than 100KB\", () => {\r",
+							"    pm.expect(pm.response.responseSize).to.be.above(2000);\r",
+							"});\r",
+							""
 						],
 						"type": "text/javascript",
 						"packages": {}
