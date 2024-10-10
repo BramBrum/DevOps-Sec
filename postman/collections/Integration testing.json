@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "a9c7a56a-8a83-42cf-8abd-78d4eaac5d7f",
+		"name": "Integration testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "38897524-a9c7a56a-8a83-42cf-8abd-78d4eaac5d7f"
+	},
+	"item": [
+		{
+			"name": "DevOps_SEC",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dabd7cef-f5c4-4d99-bc4d-e69766313b84",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "454419f5-f8a9-4ccb-87a1-5133b468d1f2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://54.175.147.238:30000/",
+					"protocol": "http",
+					"host": [
+						"54",
+						"175",
+						"147",
+						"238"
+					],
+					"port": "30000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
