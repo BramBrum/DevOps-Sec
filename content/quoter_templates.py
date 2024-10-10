@@ -3,6 +3,7 @@ def quote_fragment(id, text, attribution):
 <a href="/quotes/{id}" class="quote img{id % 13}">
   <q>{text}</q>
   <address>{attribution}</address>
+  <p>Bram</p>
 </a>
 """
 
@@ -24,8 +25,6 @@ def comment_fragment(text,user_name,time):
 
 def main_page(quotes,user_id,error):
   quotes = [quote_fragment(q['id'], q['text'], q['attribution']) for q in quotes]
-  if not quotes:
-    quotes.append(quote_fragment(1, "Bram is een geweldige naam!", "Bram Wopereis"))
   content = f"<main>{''.join(quotes)}</main>"
   return page(content,user_id,None,error)
 
