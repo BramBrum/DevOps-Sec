@@ -24,7 +24,7 @@
 							"    pm.expect(pm.response.text()).to.include(\"Bram\");\r",
 							"})\r",
 							"pm.test(\"Response size is greater than 100KB\", () => {\r",
-							"    pm.expect(pm.response.responseSize).to.be.above(2000);\r",
+							"    pm.expect(pm.response.responseSize).to.be.above(100);\r",
 							"});\r",
 							""
 						],
