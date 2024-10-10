@@ -44,8 +44,7 @@ jobs:
       with:
           command: cves
           image: brambrum/devops-app:latest
-#         only-fixed: true
-          only-severities: critical
+          only-severities: high
           ignore-base: false
           ignore-unchanged: false
           write-comment: true
