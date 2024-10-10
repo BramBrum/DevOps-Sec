@@ -24,6 +24,8 @@ def comment_fragment(text,user_name,time):
 
 def main_page(quotes,user_id,error):
   quotes = [quote_fragment(q['id'], q['text'], q['attribution']) for q in quotes]
+  if not quotes:
+    quotes.append(quote_fragment(1, "Bram is een geweldige naam!", "Bram Wopereis"))
   content = f"<main>{''.join(quotes)}</main>"
   return page(content,user_id,None,error)
 
@@ -66,7 +68,7 @@ def page(content,user_id,title,error=None):
     return f"""<!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <title>{title or "Quoter XP Bram"}</title>
+  <title>{title or "Quoter XP"}</title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="/static/style.css">
 </head>
@@ -75,7 +77,7 @@ def page(content,user_id,title,error=None):
 
 <header>
   <div class="title">
-    <a class="home" href="/">Quoter XP Bram</a>
+    <a class="home" href="/">Quoter XP </a>
     {links}
   </div>
 </header>
@@ -83,7 +85,7 @@ def page(content,user_id,title,error=None):
 
 <div class="modal">
   <form action="/quotes" method="post">
-    <h3>Quote Bram</h3>
+    <h3>Quote </h3>
     <textarea name="text"></textarea>
     <h3>Attribution</h3>
     <input type="text" name="attribution">
