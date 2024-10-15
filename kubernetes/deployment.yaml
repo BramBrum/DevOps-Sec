@@ -1,11 +1,11 @@
 apiVersion: apps/v1
-kind: DaemonSet
+kind: Deployment
 metadata:
   name: student-devsecops
   labels:
     app: quoterxp
 spec:
-  replicas: 1
+  replicas: 2
   strategy:
     type: Recreate
   selector:
